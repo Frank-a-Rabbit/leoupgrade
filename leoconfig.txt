@@ -1,0 +1,372 @@
+// common > customBundles > global > header
+
+{
+    "type" : "css",
+    "virtual" : { "name" : "variables" },
+    "attrs" : *preloadCSS
+},
+
+// common > customBundles 
+
+{
+    "name" : "detail",
+    "header" : [
+        {
+            "type" : "css",
+            "virtual" : { "name" : "custom_detail" },
+            "attrs" : *preloadCSS
+        },
+    ]
+},
+{
+    "name" : "layoutjs",
+    "header" : [
+        {
+            "type" : "css",
+            "virtual" : { "name" : "custom_layoutjs" },
+            "attrs" : *preloadCSS
+        },
+        {
+            "type" : "css",
+            "virtual" : { "name" : "custom_vue_airbnb_style_datepicker" },
+            "attrs" : *preloadCSS
+        },
+    ]
+},
+{
+    "name" : "quickview",
+    "header" : [
+        {
+            "type" : "css",
+            "virtual" : { "name" : "custom_quickview" },
+            "attrs" : *preloadCSS
+        },
+    ]
+},
+{
+    "name" : "glidejs",
+    "header" : [
+        {
+            "type" : "css",
+            "href" : "https://unpkg.com/@glidejs/glide@3.4.1/dist/css/glide.core.min.css",
+            "attrs" : *preloadCSS
+        }
+    ]
+},
+
+// common > requireJsPaths
+{ "name" : "glidejs", "location" : "https://unpkg.com/@glidejs/glide@3.4.1/dist/glide.min" },
+{ "name" : "layoutjs" },
+{ "name" : "detail" },
+{ "name" : "detail/detail_template", "type" : "template" },
+{ "name" : "detail/media_template", "type" : "template" },
+{ "name" : "detail/drawer_template", "type" : "template" },
+{ "name" : "detail/whats_nearby" },
+{ "name" : "detail/whats_nearby_template", "type" : "template" },
+{ "name" : "detail/vue-add-to-calendar" },
+{ "name" : "tripbuilder_component" },
+{ "name" : "yelp_component" },
+{ "name" : "tripadvisor_component" },
+{ "name" : "vue_airbnb_style_datepicker" },
+{ "name" : "yelp_snippet_template", "type" : "template" },
+{ "name" : "tripadvisor_snippet_template", "type" : "template" },
+{ "name" : "layoutjs/main_template", "type" : "template" },
+{ "name" : "layoutjs/item_template", "type" : "template" },
+{ "name" : "layoutjs/convention_item_template", "type" : "template" },
+{ "name" : "layoutjs/wraplink_template", "type" : "template" },
+{ "name" : "layoutjs/map_template", "type" : "template" },
+{ "name" : "layoutjs/info_window_template", "type" : "template" },
+{ "name" : "layoutjs/views_template", "type" : "template" },
+{ "name" : "layoutjs/sorts_template", "type" : "template" },
+{ "name" : "layoutjs/pager_template", "type" : "template" },
+{ "name" : "layoutjs/limits_template", "type" : "template" },
+{ "name" : "layoutjs/filter_checkbox_template", "type" : "template" },
+{ "name" : "layoutjs/filter_twostage_template", "type" : "template" },
+{ "name" : "layoutjs/filter_select_template", "type" : "template" },
+{ "name" : "layoutjs/filter_keyword_template", "type" : "template" },
+{ "name" : "layoutjs/filter_text_template", "type" : "template" },
+{ "name" : "layoutjs/filter_daterange_template", "type" : "template" },
+{ "name" : "layoutjs/filter_number_template", "type" : "template" },
+{ "name" : "layoutjs/filter_toggle_template", "type" : "template" },
+{ "name" : "layoutjs/filter_date_template", "type" : "template" },
+{ "name" : "layoutjs/product_search_form_template", "type" : "template" },
+{ "name" : "layoutjs/click_to_compare_component" },
+{ "name" : "layoutjs/click_to_compare_template", "type" : "template" },
+{ "name" : "layoutjs/download" },
+{ "name" : "layoutjs/download_template", "type" : "template" },
+{ "name" : "tripbuilder_template", "type" : "template" },
+{ "name" : "quickview/quickview" },
+{ "name" : "quickview/site_quickview_config" },
+{ "name" : "quickview/site_quickview" },
+{ "name" : "quickview/detail_template", "type" : "template" },
+{ "name" : "quickview/button", "type" : "template" },
+{ "name" : "quickview/component" },
+{ "name" : "quickview/component_template", "type" : "template" },
+{ "name" : "lazyload" },
+{ "name" : "ui_watcher" },
+{ "name" : "components/threshold360/viewer" },
+{ "name" : "components/threshold360/viewer_template", "type" : "template" },
+{ "name" : "utils" },
+{ "name" : "calendar_utils" },
+
+// listings > layoutTemplates
+
+{
+    "name" : "layoutjs_list",
+    "label" : "List - Pro",
+    "fields" : [
+        {
+            "name" : "defaultView",
+            "label" : "Default View",
+            "type" : "select",
+            "required" : false,
+            "moduleForm" : {
+                "template" : "select",
+                "options" : [
+                    { "label" : "Grid", "value" : "grid" },
+                    { "label" : "List", "value" : "list" },
+                    { "label" : "Map", "value" : "map" }
+                ],
+                "handlers" : [{ "name" : "selectOptions" }],
+                "tooltip" : "The default view shown when widget is present."
+            },
+            "moduleList" : {
+                "show" : false
+            }
+        },
+        {
+            "name" : "map_defaults_open",
+            "label" : "Map Defaults Open",
+            "type" : "onoffswitch",
+            "moduleGlobal" : {
+                "help" : "<ul><li><strong>On:</strong> The map will be open by default when the page loads.</li><li><strong>Off:</strong> The map will be closed by default when the page loads.</li></ul>"
+            }
+        },
+        {
+            "name" : "hide_regions",
+            "label" : "Hide Regions",
+            "type" : "onoffswitch",
+            "moduleGlobal" : {
+                "help" : "Hide regions filter."
+            }
+        },
+        {
+            "name" : "amenities_filter",
+            "label" : "Filter by Amenity",
+            "type" : "tagselect",
+            "moduleList" : {
+                "show" : false
+            },
+            "moduleGlobal" : {
+                "help": "Adds the selected amenities to the default filter query.",
+                "optionsQuery" : {
+                    "model" : "plugins_listings_listingmeta",
+                    "method" : "aggregate",
+                    "pipeline" : [
+                        {
+                            "$project" : { "amenity" : "$amenities" }
+                        },
+                        { "$unwind" : "$amenity" },
+                        {
+                            "$project" : {
+                                "group" : "$amenity.groups",
+                                "tab_name" : "$amenity.amenitytabname"
+                            }
+                        },
+                        { "$unwind" : "$group" },
+                        {
+                            "$project" : {
+                                "field_data" : "$group.fields",
+                                "group_name": "$group.amenitygroupname",
+                                "tab_name": "$tab_name"
+                            }
+                        },
+                        { "$unwind" : "$field_data" },
+                        {
+                            "$match": {
+                                "field_data.typeid": {"$in": [11]}
+                            }
+                        },
+                        {
+                            "$project" : {
+                                "group_name": "$group_name",
+                                "tab_name": "$tab_name",
+                                "unique_name": "$field_data.uniquename",
+                                "label": "$field_data.label"
+                            }
+                        },
+                        {
+                            "$sort": { "group_name": 1 }
+                        }
+                    ]
+                },
+                "optionsMap" : {
+                    "label" : {
+                        "template" : "{{current.group_name}} - {{current.tab_name}} - {{current.label}}"
+                    },
+                    "value" : {
+                        "template" : "{{current.unique_name}}"
+                    }
+                }
+            }
+        },
+        {
+            "name" : "specific_listings",
+            "label" : "Specific Listings",
+            "type" : "relationship",
+            "filter" : true,
+            "typeExtra" : {
+                "type" : "multiple",
+                "modelName" : "plugins_listings_listings",
+                "labelColumn" : "cms_title",
+                "valueColumn" : "recid",
+                "valueType" : "number",
+                "sortColumn" : "cms_title_sort",
+                "queryFields" : {
+                    "recid" : 1
+                }
+            }
+        },
+        {
+            "name" : "items_per_page",
+            "label" : "Items Per Page",
+            "type" : "select",
+            "required" : false,
+            "moduleForm" : {
+                "show" : true,
+                "template" : "select",
+                "options" : [
+                    { "label" : "12", "value" : "12" },
+                    { "label" : "24", "value" : "24" }  
+                ],
+                "handlers" : [{ "name" : "selectOptions" }],
+                "tooltip" : "The number of items to show per page of list results."
+            },
+            "moduleList" : {
+                "show" : false
+            }
+        }
+    ]
+}
+
+// events > layoutTemplates
+
+{
+    "name" : "layoutjs_list",
+    "label" : "List - Pro",
+    "fields" : [
+        {
+            "name" : "defaultView",
+            "label" : "Default View",
+            "type" : "select",
+            "required" : false,
+            "moduleForm" : {
+                "template" : "select",
+                "options" : [
+                    { "label" : "Grid", "value" : "grid" },
+                    { "label" : "List", "value" : "list" },
+                    { "label" : "Map", "value" : "map" }
+                ],
+                "handlers" : [{ "name" : "selectOptions" }],
+                "tooltip" : "The default view shown when widget is present."
+            },
+            "moduleList" : {
+                "show" : false
+            }
+        },
+        {
+            "name" : "map_defaults_open",
+            "label" : "Map Defaults Open",
+            "type" : "onoffswitch",
+            "moduleGlobal" : {
+                "help" : "<ul><li><strong>On:</strong> The map will be open by default when the page loads.</li><li><strong>Off:</strong> The map will be closed by default when the page loads.</li></ul>"
+            }
+        },
+        {
+            "name" : "items_per_page",
+            "label" : "Items Per Page",
+            "type" : "select",
+            "required" : false,
+            "moduleForm" : {
+                "show" : true,
+                "template" : "select",
+                "options" : [
+                    { "label" : "12", "value" : "12" },
+                    { "label" : "24", "value" : "24" }  
+                ],
+                "handlers" : [{ "name" : "selectOptions" }],
+                "tooltip" : "The number of items to show per page of list results."
+            },
+            "moduleList" : {
+                "show" : false
+            }
+        }
+    ]
+}
+
+// offers > layoutTemplates
+
+{
+    "name" : "layoutjs_list",
+    "label" : "List - Pro",
+    "fields" : [
+        {
+            "name" : "defaultView",
+            "label" : "Default View",
+            "type" : "select",
+            "required" : false,
+            "moduleForm" : {
+                "template" : "select",
+                "options" : [
+                    { "label" : "Grid", "value" : "grid" },
+                    { "label" : "List", "value" : "list" },
+                    { "label" : "Map", "value" : "map" }
+                ],
+                "handlers" : [{ "name" : "selectOptions" }],
+                "tooltip" : "The default view shown when widget is present."
+            },
+            "moduleList" : {
+                "show" : false
+            }
+        },
+        {
+            "name" : "map_defaults_open",
+            "label" : "Map Defaults Open",
+            "type" : "onoffswitch",
+            "moduleGlobal" : {
+                "help" : "<ul><li><strong>On:</strong> The map will be open by default when the page loads.</li><li><strong>Off:</strong> The map will be closed by default when the page loads.</li></ul>"
+            }
+        },
+        {
+            "name" : "items_per_page",
+            "label" : "Items Per Page",
+            "type" : "select",
+            "required" : false,
+            "moduleForm" : {
+                "show" : true,
+                "template" : "select",
+                "options" : [
+                    { "label" : "12", "value" : "12" },
+                    { "label" : "24", "value" : "24" }  
+                ],
+                "handlers" : [{ "name" : "selectOptions" }],
+                "tooltip" : "The number of items to show per page of list results."
+            },
+            "moduleList" : {
+                "show" : false
+            }
+        }
+    ]
+}
+
+// common > templates > panel_page
+
+**add to requireBundles 
+
+"plugins_common_custom_quickview",
+
+**add below closing div for page element
+
+<div id="quickview-detail" data-quickview-detail></div>
+
+
